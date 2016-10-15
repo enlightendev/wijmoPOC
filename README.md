@@ -1,5 +1,22 @@
 # WijmoPOC
 
+
+## wijmo notes
+
+Download wijmo with NPM modules
+- http://prerelease.componentone.com/wijmo5/Nightly_C1Wijmo_5.20162.222_2016.10.10.zip
+
+In your project install wijmo amd modules using npm.
+-  npm install [path to wijmo-amd in above download] --save
+
+- wijmo .js files in node_modules should not have .min as part of file name. This is an angular-cli issue.
+-- http://wijmo.com/topic/webpack2angular-2/
+-- http://wijmo.com/blog/integrating-wijmo-controls-module-loaders-bundlers/
+
+
+
+
+
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.15.
 
 ## Development server

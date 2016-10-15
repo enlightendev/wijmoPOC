@@ -23,7 +23,7 @@
     "core-js": "^2.4.1",
     "rxjs": "5.0.0-beta.12",
     "ts-helpers": "^1.1.1",
-    "wijmo": "file:///Users/Juan/dev/javascript/angular2/third-party/wijmo/Nightly_C1Wijmo_5.20162.222_2016.10.10/NpmImages/wijmo-amd",
+    "wijmo": "see notes in readme",
     "zone.js": "^0.6.23"
   },
   "devDependencies": {
