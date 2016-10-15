@@ -4,6 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import {WjInputModule} from "wijmo/wijmo.angular2.input";
+import {WjGridModule} from "wijmo/wijmo.angular2.grid";
+import {DataSvc} from "./services/DataSvc";
+import {WjGridFilterModule} from "wijmo/wijmo.angular2.grid.filter";
 
 @NgModule({
   declarations: [
@@ -12,9 +16,12 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    WjInputModule,
+    WjGridModule,
+    WjGridFilterModule
   ],
-  providers: [],
+  providers: [DataSvc],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

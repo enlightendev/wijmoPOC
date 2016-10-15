@@ -1,3 +1,87 @@
-<h1>
-  {{title}}
-</h1>
+<div style="border: dashed 1px; padding: 10px">
+  <label>itemsSource Only</label>
+  <wj-auto-complete [itemsSource]="countries"
+                    [isRequired]="false">
+  </wj-auto-complete>
+
+</div>
+
+<div style="border: dashed 1px; padding: 10px">
+
+  <label>itemsSource & cssMatch</label>
+  <wj-auto-complete [itemsSource]="countries"
+                    [cssMatch]="'highlight'"
+                    [isRequired]="false">
+  </wj-auto-complete>
+</div>
+
+
+<div style="border: dashed 1px; padding: 10px">
+
+  <div>
+    Row Freeze <wj-input-number [(value)]="frozenRowNum"
+                                [format]="'n'"
+                                [step]="1">
+
+  </wj-input-number>
+    Column Freeze <wj-input-number [(value)]="frozenColNum"
+                                   [format]="'n'"
+                                   [step]="1">
+
+  </wj-input-number>
+
+  </div>
+
+  <wj-flex-grid style="height:400px"
+                #frozenFlex
+                [itemsSource]="data"
+                [frozenRows]="frozenRowNum"
+                [frozenColumns]="frozenColNum">
+
+    <wj-flex-grid-filter #filter></wj-flex-grid-filter>
+
+    <wj-flex-grid-column [header]="'Country'"
+                         [binding]="'country'">
+    </wj-flex-grid-column>
+
+    <wj-flex-grid-column [header]="'Date'"
+                         [binding]="'date'">
+    </wj-flex-grid-column>
+
+    <wj-flex-grid-column [header]="'Revenue'"
+                         [binding]="'amount'"
+                         [format]="'n0'">
+
+    </wj-flex-grid-column>
+
+    <wj-flex-grid-column [header]="'Active'"
+                         [binding]="'active'">
+
+    </wj-flex-grid-column>
+
+  </wj-flex-grid>
+
+  <button class="btn btn-default"
+          (click)="toggleFreeze(frozenFlex)">
+    {{ frozenFlex.frozenRows == 0 ? "Freeze" : "Unfreeze" }​}
+  </button>
+
+  <p>
+
+    <input type="checkbox" [(ngModel)]="filter.showFilterIcons" />
+
+    Clear the filter, save and load filter definitions to local storage:
+    <button class="btn btn-default" (click)="filter.clear()">
+      Clear
+    </button>
+    <button class="btn btn-default" (click)="saveFilter()">
+      Save
+    </button>
+    <button class="btn btn-default" (click)="restoreFilter()">
+      Load
+    </button>
+  </p>
+
+</div>
+
+
